@@ -1,0 +1,118 @@
+/* Base styles */
+.TsContainer_main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Container for left and right sections */
+.Tspage_left, .Tspage_right {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Left section (Questions) */
+.Tspage_left {
+    width: 30%;
+    background-color: #e3f2fd;
+    border-right: 2px solid #0288d1;
+    height: 100%;
+}
+
+.Tspage_left h1 {
+    font-size: 24px;
+    color: #0288d1;
+    border-bottom: 2px solid #01579b;
+    padding-bottom: 10px;
+}
+
+.ts__list {
+    list-style-type: decimal;
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.ts__list li {
+    margin-bottom: 10px;
+    color: #01579b;
+}
+
+/* Right section (Answers) */
+.Tspage_right {
+    width: 70%;
+    background-color: #fff8e1;
+}
+
+.Tspage_right h1 {
+    font-size: 24px;
+    color: #f57f17;
+    border-bottom: 2px solid #e65100;
+    padding-bottom: 10px;
+}
+
+/* Answer section styling */
+.ts__answer {
+    margin-bottom: 20px;
+}
+
+.ts__answer h2 {
+    font-size: 20px;
+    color: #e65100;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.ts__answer p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #424242;
+}
+
+/* Responsive Styles */
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    .TsContainer_main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .Tspage_left, .Tspage_right {
+        width: 100%;
+        border-right: none;
+    }
+
+    .Tspage_left {
+        background-color: #bbdefb;
+    }
+
+    .Tspage_right {
+        background-color: #fffde7;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .Tspage_left, .Tspage_right {
+        padding: 10px;
+    }
+
+    .Tspage_left h1, .Tspage_right h1 {
+        font-size: 20px;
+    }
+
+    .ts__list {
+        font-size: 16px;
+    }
+
+    .ts__answer h2 {
+        font-size: 18px;
+    }
+
+    .ts__answer p {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,137 @@
+/* Base styles */
+.CssContainer_main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Container for left and right sections */
+.Csspage_left, .Csspage_right {
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+/* Left section (Questions) */
+.Csspage_left {
+  width: 30%;
+  background-color: #e0f7fa;
+  border-right: 2px solid #00796b;
+  height: 1563px;
+
+}
+
+.Csspage_left h1 {
+  font-size: 24px;
+  color: #00796b;
+  border-bottom: 2px solid #004d40;
+  padding-bottom: 10px;
+}
+
+.css__list {
+  list-style-type: decimal;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.css__list li {
+  margin-bottom: 10px;
+  color: #004d40;
+}
+
+/* Right section (Answers) */
+.Csspage_right {
+  width: 70%;
+  background-color: #fff3e0;
+}
+
+.Csspage_right h1 {
+  font-size: 24px;
+  color: #e64a19;
+  border-bottom: 2px solid #bf360c;
+  padding-bottom: 10px;
+}
+
+/* Answer section styling */
+.css__answer {
+  margin-bottom: 20px;
+}
+
+.css__answer h2 {
+  font-size: 20px;
+  color: #bf360c;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.css__answer p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #424242;
+}
+
+.css__answer ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.css__answer ul li {
+  margin-bottom: 8px;
+}
+
+/* Responsive Styles */
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .CssContainer_main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .Csspage_left, .Csspage_right {
+    width: 100%;
+    border-right: none;
+  }
+
+  .Csspage_left {
+    background-color: #b2ebf2;
+  }
+
+  .Csspage_right {
+    background-color: #fff8e1;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .Csspage_left, .Csspage_right {
+    padding: 10px;
+  }
+
+  .Csspage_left h1, .Csspage_right h1 {
+    font-size: 20px;
+  }
+
+  .css__list {
+    font-size: 16px;
+  }
+
+  .css__answer h2 {
+    font-size: 18px;
+  }
+
+  .css__answer p {
+    font-size: 14px;
+  }
+
+  .css__answer ul {
+    padding-left: 15px;
+  }
+
+  .css__answer ul li {
+    font-size: 12px;
+  }
+}
