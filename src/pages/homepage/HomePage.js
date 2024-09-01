@@ -43,7 +43,7 @@ export default function HomePage() {
         </Link>
       </div>
       <div>
-        <Link to="/SystemDesignInterview">
+        <Link to="/SystemDesign">
           <p>System Design Interview</p>
         </Link>
       </div>

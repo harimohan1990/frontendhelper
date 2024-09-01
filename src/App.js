@@ -33,7 +33,7 @@ function App() {
            <Route path="/TypeScriptInterview" element={<TypeScriptPage />} />
            <Route path='/ReactInterview' element={<Reactpage/>}/>
            <Route path="/NextInterview" element={< NextPage/>} />
-           <Route path="/DSA" element={< DsaPage/>} />
+           <Route path="/DSAInterview" element={< DsaPage/>} />
            <Route path="/SystemDesign" element={<SystemDesign />} />
            <Route path="/Machinecode" element={<Machinecode />} />
           
