@@ -83,11 +83,6 @@ const styles = {
     alignItems: 'center',
     color: '#fff',
     flexWrap: 'wrap',
-    position: 'fixed',
-    width: '100%',
-    top: '0',
-    left: '0',
-    zIndex: '1000', // Ensure header stays above other content
   },
   logo: {
     fontSize: '24px',
