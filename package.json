@@ -20,7 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://github.com/harimohan1990/frontendbuddydev",
+  "homepage": "https://github.com/harimohan1990/frontendbuddydev.git",
   "eslintConfig": {
     "extends": [
       "react-app",
