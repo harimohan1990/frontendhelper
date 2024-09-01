@@ -2,71 +2,39 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  // Hook to keep track of window width
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  // Effect to update window width on resize
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Determine the appropriate styles based on window width
-  const getResponsiveStyles = () => {
-    if (windowWidth <= 480) { // Mobile
-      return {
-        header: { flexDirection: 'column', alignItems: 'flex-start' },
-        logo: { fontSize: '20px' },
-        navList: { flexDirection: 'column', alignItems: 'flex-start', gap: '10px' },
-        navItem: { fontSize: '14px' },
-      };
-    } else if (windowWidth <= 768) { // Tablet
-      return {
-        navList: { flexDirection: 'column', alignItems: 'center' },
-        navItem: { fontSize: '16px' },
-      };
-    } else { // Desktop and larger
-      return {
-        navList: { flexDirection: 'row', gap: '15px' },
-        navItem: { fontSize: '18px' },
-      };
-    }
-  };
-
-  const responsiveStyles = getResponsiveStyles();
 
   return (
-    <header style={{ ...styles.header, ...responsiveStyles.header }}>
-      <div style={{ ...styles.logo, ...responsiveStyles.logo }}>Frontend Interview Portal</div>
+    <header style={{ ...styles.header }}>
+      <div style={{ ...styles.logo}}>Frontend Interview Portal</div>
       <nav style={styles.nav}>
-        <ul style={{ ...styles.navList, ...responsiveStyles.navList }}>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="./HtmlInterview" style={styles.navLink}>Html Interview</Link>
+        <ul style={{ ...styles.navList}}>
+          <li style={{ ...styles.navItem}}>
+            <Link to="./HtmlInterview" style={styles.navLink}>Html </Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/CssInterview" style={styles.navLink}>Css Interview</Link>
+          <li style={{ ...styles.navItem, }}>
+            <Link to="/CssInterview" style={styles.navLink}>Css</Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/JavaScriptInterview" style={styles.navLink}>JavaScript Interview</Link>
+          <li style={{ ...styles.navItem}}>
+            <Link to="/JavaScriptInterview" style={styles.navLink}>JavaScript </Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/TypeScriptInterview" style={styles.navLink}>TypeScript Interview</Link>
+          <li style={{ ...styles.navItem}}>
+            <Link to="/TypeScriptInterview" style={styles.navLink}>TypeScript </Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/ReactInterview" style={styles.navLink}>ReactJs Interview</Link>
+          <li style={{ ...styles.navItem}}>
+            <Link to="/ReactInterview" style={styles.navLink}>ReactJs </Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/NextInterview" style={styles.navLink}>NextJs Interview</Link>
+          <li style={{ ...styles.navItem}}>
+            <Link to="/NextInterview" style={styles.navLink}>NextJs </Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/DSA" style={styles.navLink}>DSA Interview</Link>
+          <li style={{ ...styles.navItem}}>
+            <Link to="/DSAInterview" style={styles.navLink}>DSA</Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/SystemDesign" style={styles.navLink}>System Design Interview</Link>
+          <li style={{ ...styles.navItem}}>
+            <Link to="/SystemDesign" style={styles.navLink}>System Design </Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/Machinecode" style={styles.navLink}>Machine Coding Interview</Link>
+          <li style={{ ...styles.navItem}}>
+            <Link to="/Machinecode" style={styles.navLink}>Machine Coding</Link>
           </li>
         </ul>
       </nav>
