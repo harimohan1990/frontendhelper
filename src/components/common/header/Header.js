@@ -96,7 +96,17 @@ const styles = {
     color: '#fff',
     textDecoration: 'none',
     fontWeight: '500',
+    borderBottom: '2px solid transparent', // Initial border at the bottom
+    padding: '5px 10px',
+    transition: 'border-color 0.3s', // Smooth transition for border color
   },
 };
+
+// Add this CSS to your global stylesheet or use a CSS-in-JS solution
+const stylesCSS = `
+  .nav-link:hover {
+    border-bottom: 2px solid #61dafb; /* Border color on hover */
+  }
+`;
 
 export default Header;
