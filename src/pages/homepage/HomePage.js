@@ -9,47 +9,52 @@ export default function HomePage() {
     <div className='HomeContainer_main'>
       <div>
         <Link to="/HtmlInterview">
-          <p>Html Interview</p>
+          <p>Html</p>
         </Link>
       </div>
       <div>
         <Link to="/CssInterview">
-          <p>Css Interview</p>
+          <p>Css </p>
         </Link>
       </div>
       <div>
         <Link to="/JavaScriptInterview">
-          <p>JavaScript Interview</p>
+          <p>JavaScript</p>
         </Link>
       </div>
       <div>
         <Link to="/TypeScriptInterview">
-          <p>TypeScript Interview</p>
+          <p>TypeScript </p>
         </Link>
       </div>
       <div>
         <Link to="/ReactInterview">
-          <p>React Interview</p>
+          <p>React </p>
         </Link>
       </div>
       <div>
         <Link to="/NextInterview">
-          <p>Next.js Interview</p>
+          <p>Next.js </p>
         </Link>
       </div>
       <div>
         <Link to="/DSAInterview">
-          <p>DSA Interview</p>
+          <p>DSA </p>
         </Link>
       </div>
       <div>
-        <Link to="/SystemDesignInterview">
-          <p>System Design Interview</p>
+        <Link to="/SystemDesign">
+          <p>System Design </p>
         </Link>
       </div>
       <div>
         <Link to="/MachineCodeInterview">
-          <p>Machine Code Interview</p>
+          <p>Machine Code</p>
+        </Link>
+      </div>
+      <div>
+        <Link to="/GitInterview">
+          <p>Git Command Commans</p>
         </Link>
       </div>
     </div>
