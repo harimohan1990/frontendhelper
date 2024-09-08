@@ -1,72 +1,60 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  // Hook to keep track of window width
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  // Effect to update window width on resize
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    let prevScrollPos = window.pageYOffset;
+
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const navbar = document.getElementById("navbar");
+
+      if (prevScrollPos > currentScrollPos) {
+        navbar.style.top = "0";
+      } else {
+        navbar.style.top = "-120px";
+      }
+      prevScrollPos = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  // Determine the appropriate styles based on window width
-  const getResponsiveStyles = () => {
-    if (windowWidth <= 480) { // Mobile
-      return {
-        header: { flexDirection: 'column', alignItems: 'flex-start' },
-        logo: { fontSize: '20px' },
-        navList: { flexDirection: 'column', alignItems: 'flex-start', gap: '10px' },
-        navItem: { fontSize: '14px' },
-      };
-    } else if (windowWidth <= 768) { // Tablet
-      return {
-        navList: { flexDirection: 'column', alignItems: 'center' },
-        navItem: { fontSize: '16px' },
-      };
-    } else { // Desktop and larger
-      return {
-        navList: { flexDirection: 'row', gap: '15px' },
-        navItem: { fontSize: '18px' },
-      };
-    }
-  };
-
-  const responsiveStyles = getResponsiveStyles();
-
   return (
-    <header style={{ ...styles.header, ...responsiveStyles.header }}>
-      <div style={{ ...styles.logo, ...responsiveStyles.logo }}>Frontend Interview Portal</div>
+    <header id="navbar" style={styles.header}>
+      <div style={styles.logo}>Frontend Interview Portal</div>
       <nav style={styles.nav}>
-        <ul style={{ ...styles.navList, ...responsiveStyles.navList }}>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="./HtmlInterview" style={styles.navLink}>Html Interview</Link>
+        <ul style={styles.navList}>
+          <li style={styles.navItem}>
+            <Link to="/HtmlInterview" style={styles.navLink}>Html </Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/CssInterview" style={styles.navLink}>Css Interview</Link>
+          <li style={styles.navItem}>
+            <Link to="/CssInterview" style={styles.navLink}>Css </Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/JavaScriptInterview" style={styles.navLink}>JavaScript Interview</Link>
+          <li style={styles.navItem}>
+            <Link to="/JavaScriptInterview" style={styles.navLink}>JavaScript </Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/TypeScriptInterview" style={styles.navLink}>TypeScript Interview</Link>
+          <li style={styles.navItem}>
+            <Link to="/TypeScriptInterview" style={styles.navLink}>TypeScript</Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/ReactInterview" style={styles.navLink}>ReactJs Interview</Link>
+          <li style={styles.navItem}>
+            <Link to="/ReactInterview" style={styles.navLink}>ReactJs</Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/NextInterview" style={styles.navLink}>NextJs Interview</Link>
+          <li style={styles.navItem}>
+            <Link to="/NextInterview" style={styles.navLink}>NextJs</Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/DSA" style={styles.navLink}>DSA Interview</Link>
+          <li style={styles.navItem}>
+            <Link to="/DSA" style={styles.navLink}>DSA</Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/SystemDesign" style={styles.navLink}>System Design Interview</Link>
+          <li style={styles.navItem}>
+            <Link to="/SystemDesign" style={styles.navLink}>System Design </Link>
           </li>
-          <li style={{ ...styles.navItem, ...responsiveStyles.navItem }}>
-            <Link to="/Machinecode" style={styles.navLink}>Machine Coding Interview</Link>
+          <li style={styles.navItem}>
+            <Link to="/Machinecode" style={styles.navLink}>Machine Coding </Link>
           </li>
         </ul>
       </nav>
@@ -83,11 +71,7 @@ const styles = {
     alignItems: 'center',
     color: '#fff',
     flexWrap: 'wrap',
-    position: 'fixed',
-    width: '100%',
-    top: '0',
-    left: '0',
-    zIndex: '1000', // Ensure header stays above other content
+    transition: 'top 0.3s', // Smooth transition for hiding/showing header
   },
   logo: {
     fontSize: '24px',
@@ -112,7 +96,17 @@ const styles = {
     color: '#fff',
     textDecoration: 'none',
     fontWeight: '500',
+    borderBottom: '2px solid transparent', // Initial border at the bottom
+    padding: '5px 10px',
+    transition: 'border-color 0.3s', // Smooth transition for border color
   },
 };
+
+// Add this CSS to your global stylesheet or use a CSS-in-JS solution
+const stylesCSS = `
+  .nav-link:hover {
+    border-bottom: 2px solid #61dafb; /* Border color on hover */
+  }
+`;
 
 export default Header;
