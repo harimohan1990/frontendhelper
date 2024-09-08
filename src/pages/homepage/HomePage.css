@@ -1,22 +1,55 @@
 .HomeContainer_main {
     display: flex;
-    width: 100%;
-    height: 100vh;
-    background: yellow;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap:20px;
-}
-
-.HomeContainer_main > div {
-    background-color: aqua;
-    flex: 1 1 33.33%; /* Take up 1/3 of the width for each item */
-     /* Set a minimum width to avoid collapsing when screen width is very small */
-    box-sizing: border-box; /* Ensure padding and border are included in width calculations */
+    gap: 20px;
+    width: 100%;
+    min-height: 100vh; /* Ensure it covers full viewport height */
+    background: linear-gradient(135deg, #ffcc00, #ff9966); /* Gradient background for a modern look */
     padding: 20px;
-    border:2px solid black;
+    box-sizing: border-box;
+  }
+  
+  .HomeContainer_main > div {
+    background-color: #00ccff; /* Soft blue color for better contrast */
+    flex: 1 1 30%; /* Default to 1/3 width for larger screens */
+    box-sizing: border-box;
+    padding: 20px;
+    border: 2px solid #003366; /* Darker border for better visibility */
     text-align: center;
-    font-size: 20px;
-}
+    font-size: 1.2rem; /* Relative font size for scalability */
+    color: #003366; /* Text color to match border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: 150px; /* Fixed height for consistent box size */
+  }
+  
+  /* Styles for tablets */
+  @media (max-width: 768px) {
+    .HomeContainer_main > div {
+      flex: 1 1 45%; /* Take up almost half the width on tablets */
+      font-size: 1.1rem; /* Slightly smaller font for tablets */
+      padding: 15px; /* Adjust padding for better spacing on tablets */
+      height: 150px; /* Consistent height for tablets */
+    }
+  }
+  
+  /* Styles for mobile devices */
+  @media (max-width: 480px) {
+    .HomeContainer_main {
+      flex-direction: column; /* Stack items vertically on mobile */
+      padding: 10px; /* Reduce padding for smaller screens */
+    }
+    
+    .HomeContainer_main > div {
+      flex: 1 1 100%; /* Take up full width on mobile */
+      font-size: 1rem; /* Smaller font for mobile */
+      padding: 10px; /* Reduce padding for mobile */
+      height: 150px; /* Fixed height for consistent box size */
+      margin-bottom: 10px; /* Add spacing between items */
+      width:96px;
+    }
+  }
+  

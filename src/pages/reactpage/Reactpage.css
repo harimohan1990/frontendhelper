@@ -1,141 +1,173 @@
-/* Container */
-.react-container {
+/* Base styles (desktop) */
+.ReactContainer_main {
   display: flex;
-  flex-direction: row; /* Horizontal layout for larger screens */
   width: 100%;
   height: 100vh;
   font-family: Arial, sans-serif;
-  overflow: hidden; /* Ensures content doesn't overflow */
 }
 
 /* Left side (Questions) */
-.react-left {
-  width: 30%; /* Adjusted width */
+.ReactPage_left {
+  width: 25%;
   background-color: #f4f4f4;
   padding: 20px;
   box-sizing: border-box;
   border-right: 2px solid #ddd;
-  overflow-y: auto; /* Allows scrolling */
+  overflow-y: auto;
 }
 
-.react-left h1 {
+.ReactPage_left h1 {
   margin-bottom: 20px;
   font-size: 24px;
   color: #333;
 }
 
-.react-list {
+.react__list {
   list-style-type: decimal;
   padding-left: 20px;
 }
 
-.react-list li {
+.react__list li {
   margin-bottom: 10px;
   font-size: 18px;
   color: #555;
   cursor: pointer;
 }
 
-.react-list li:hover {
+.react__list li:hover {
   color: #00796b;
 }
 
 /* Right side (Answers) */
-.react-right {
-  width: 70%; /* Adjusted width */
+.ReactPage_right {
+  width: 70%;
   padding: 20px;
   box-sizing: border-box;
-  overflow-y: auto; /* Allows scrolling */
+  overflow-y: auto;
 }
 
-.react-right h1 {
+.ReactPage_right h1 {
   margin-bottom: 20px;
   font-size: 24px;
   color: #333;
 }
 
-.react-answer {
+.react__answer {
   margin-bottom: 30px;
 }
 
-.react-answer h2 {
+.react__answer h2 {
   font-size: 22px;
   margin-bottom: 10px;
   color: #00796b;
 }
 
-.react-answer p,
-.react-answer ul {
+.react__answer p,
+.react__answer ul {
   font-size: 16px;
   line-height: 1.6;
   color: #555;
 }
 
-.react-answer ul {
+.react__answer ul {
   margin-top: 10px;
   padding-left: 20px;
 }
 
-.react-answer ul li {
+.react__answer ul li {
   margin-bottom: 8px;
 }
 
-.react-answer h3 {
+.react__answer h3 {
   font-size: 20px;
   margin-bottom: 8px;
   color: #00574b;
 }
 
-/* Responsive Styles */
-
-/* Tablet (max-width: 768px) */
-@media (max-width: 768px) {
-  .react-container {
-    flex-direction: column; /* Stack elements vertically */
-    height: auto;
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .ReactContainer_main {
+    flex-direction: column;
   }
 
-  .react-left,
-  .react-right {
-    width: 100%; /* Full width for both sections */
-    border-right: none; /* Remove border between sections */
-    padding: 15px;
+  .ReactPage_left,
+  .ReactPage_right {
+    width: 100%;
   }
 
-  .react-left {
-    background-color: #e0e0e0; /* Adjust background for clarity */
+  .ReactPage_left {
+    border-right: none;
+    border-bottom: 2px solid #ddd;
   }
 
-  .react-right {
-    background-color: #f0f0f0; /* Adjust background for clarity */
+  .ReactPage_left h1,
+  .ReactPage_right h1 {
+    font-size: 22px;
+  }
+
+  .react__list li {
+    font-size: 16px;
+  }
+
+  .react__answer h2 {
+    font-size: 20px;
+  }
+
+  .react__answer h3 {
+    font-size: 18px;
+  }
+
+  .react__answer p,
+  .react__answer ul {
+    font-size: 15px;
   }
 }
 
-/* Mobile (max-width: 480px) */
-@media (max-width: 480px) {
-  .react-left h1,
-  .react-right h1 {
-    font-size: 20px; /* Slightly smaller font size */
+/* Mobile styles */
+@media (max-width: 768px) {
+  .ReactContainer_main {
+    flex-direction: column;
   }
 
-  .react-list {
-    font-size: 16px; /* Adjust font size */
+  .ReactPage_left,
+  .ReactPage_right {
+    width: 100%;
   }
 
-  .react-answer h2 {
-    font-size: 18px; /* Adjust font size */
+  .ReactPage_left {
+    border-right: none;
+    border-bottom: 2px solid #ddd;
+    padding: 15px;
   }
 
-  .react-answer p,
-  .react-answer ul {
-    font-size: 14px; /* Adjust font size */
+  .ReactPage_right {
+    padding: 15px;
   }
 
-  .react-answer ul {
-    padding-left: 15px; /* Adjust padding */
+  .ReactPage_left h1,
+  .ReactPage_right h1 {
+    font-size: 20px;
   }
 
-  .react-answer ul li {
-    font-size: 12px; /* Adjust font size */
+  .react__list li {
+    font-size: 14px;
+  }
+
+  .react__answer h2 {
+    font-size: 18px;
+  }
+
+  .react__answer h3 {
+    font-size: 16px;
+  }
+
+  .react__answer p,
+  .react__answer ul {
+    font-size: 14px;
+  }
+
+  .ReactPage_left,
+  .ReactPage_right {
+    padding: 10px;
   }
 }

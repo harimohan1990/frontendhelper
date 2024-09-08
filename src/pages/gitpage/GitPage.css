@@ -1,0 +1,131 @@
+/* Base styles */
+.GitContainer_main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  /* Container for left and right sections */
+  .Gitpage_left, .Gitpage_right {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Left section (Commands) */
+  .Gitpage_left {
+    width: 30%;
+    background-color: #e8f5e9;
+    border-right: 2px solid #388e3c;
+    height: 100%;
+  }
+  
+  .Gitpage_left h1 {
+    font-size: 24px;
+    color: #388e3c;
+    border-bottom: 2px solid #2e7d32;
+    padding-bottom: 10px;
+  }
+  
+  .git__list {
+    list-style-type: decimal;
+    padding-left: 20px;
+    font-size: 18px;
+  }
+  
+  .git__list li {
+    margin-bottom: 10px;
+    color: #2e7d32;
+  }
+  
+  /* Right section (Details) */
+  .Gitpage_right {
+    width: 70%;
+    background-color: #f1f8e9;
+  }
+  
+  .Gitpage_right h1 {
+    font-size: 24px;
+    color: #d32f2f;
+    border-bottom: 2px solid #c62828;
+    padding-bottom: 10px;
+  }
+  
+  /* Details section styling */
+  .git__details {
+    margin-bottom: 20px;
+  }
+  
+  .git__details h2 {
+    font-size: 20px;
+    color: #c62828;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .git__details p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #424242;
+  }
+  
+  .git__details pre {
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  
+  /* Responsive Styles */
+  
+  /* Tablet (max-width: 768px) */
+  @media (max-width: 768px) {
+    .GitContainer_main {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .Gitpage_left, .Gitpage_right {
+      width: 100%;
+      border-right: none;
+    }
+  
+    .Gitpage_left {
+      background-color: #a5d6a7;
+    }
+  
+    .Gitpage_right {
+      background-color: #e8f5e9;
+    }
+  }
+  
+  /* Mobile (max-width: 480px) */
+  @media (max-width: 480px) {
+    .Gitpage_left, .Gitpage_right {
+      padding: 10px;
+    }
+  
+    .Gitpage_left h1, .Gitpage_right h1 {
+      font-size: 20px;
+    }
+  
+    .git__list {
+      font-size: 16px;
+    }
+  
+    .git__details h2 {
+      font-size: 18px;
+    }
+  
+    .git__details p {
+      font-size: 14px;
+    }
+  
+    .git__details pre {
+      font-size: 12px;
+    }
+  }
+  

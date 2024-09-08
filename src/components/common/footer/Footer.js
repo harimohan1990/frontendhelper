@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 const Footer = () => {
-  
+
 
   return (
     <footer style={styles.footer}>
       <div style={styles.footerContent}>
-        <div style={{ ...styles.footerText,  }}>
+        <div style={{ ...styles.footerText }}>
           <p>Made with ❤️ for Indian Developers</p>
         </div>
         <div style={styles.footerLinks}>

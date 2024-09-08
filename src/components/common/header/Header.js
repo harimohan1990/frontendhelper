@@ -1,60 +1,43 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  useEffect(() => {
-    let prevScrollPos = window.pageYOffset;
 
-    const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      const navbar = document.getElementById("navbar");
-
-      if (prevScrollPos > currentScrollPos) {
-        navbar.style.top = "0";
-      } else {
-        navbar.style.top = "-120px";
-      }
-      prevScrollPos = currentScrollPos;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
-    <header id="navbar" style={styles.header}>
-      <div style={styles.logo}>Frontend Interview Portal</div>
+    <header style={{ ...styles.header }}>
+      <div style={{ ...styles.logo}}>Frontend Interview Portal</div>
       <nav style={styles.nav}>
-        <ul style={styles.navList}>
-          <li style={styles.navItem}>
-            <Link to="/HtmlInterview" style={styles.navLink}>Html </Link>
+        <ul style={{ ...styles.navList}}>
+          <li style={{ ...styles.navItem}}>
+            <Link to="./HtmlInterview" style={styles.navLink}>Html </Link>
           </li>
-          <li style={styles.navItem}>
-            <Link to="/CssInterview" style={styles.navLink}>Css </Link>
+          <li style={{ ...styles.navItem, }}>
+            <Link to="/CssInterview" style={styles.navLink}>Css</Link>
           </li>
-          <li style={styles.navItem}>
+          <li style={{ ...styles.navItem}}>
             <Link to="/JavaScriptInterview" style={styles.navLink}>JavaScript </Link>
           </li>
-          <li style={styles.navItem}>
-            <Link to="/TypeScriptInterview" style={styles.navLink}>TypeScript</Link>
+          <li style={{ ...styles.navItem}}>
+            <Link to="/TypeScriptInterview" style={styles.navLink}>TypeScript </Link>
           </li>
-          <li style={styles.navItem}>
-            <Link to="/ReactInterview" style={styles.navLink}>ReactJs</Link>
+          <li style={{ ...styles.navItem}}>
+            <Link to="/ReactInterview" style={styles.navLink}>ReactJs </Link>
           </li>
-          <li style={styles.navItem}>
-            <Link to="/NextInterview" style={styles.navLink}>NextJs</Link>
+          <li style={{ ...styles.navItem}}>
+            <Link to="/NextInterview" style={styles.navLink}>NextJs </Link>
           </li>
-          <li style={styles.navItem}>
-            <Link to="/DSA" style={styles.navLink}>DSA</Link>
+          <li style={{ ...styles.navItem}}>
+            <Link to="/DSAInterview" style={styles.navLink}>DSA</Link>
           </li>
-          <li style={styles.navItem}>
+          <li style={{ ...styles.navItem}}>
             <Link to="/SystemDesign" style={styles.navLink}>System Design </Link>
           </li>
-          <li style={styles.navItem}>
-            <Link to="/Machinecode" style={styles.navLink}>Machine Coding </Link>
+          <li style={{ ...styles.navItem}}>
+            <Link to="/Machinecode" style={styles.navLink}>Machine Coding</Link>
+          </li>
+          <li style={{ ...styles.navItem}}>
+            <Link to="GitInterview"  style={styles.navLink}>Git Commands</Link>
           </li>
         </ul>
       </nav>
@@ -71,7 +54,6 @@ const styles = {
     alignItems: 'center',
     color: '#fff',
     flexWrap: 'wrap',
-    transition: 'top 0.3s', // Smooth transition for hiding/showing header
   },
   logo: {
     fontSize: '24px',

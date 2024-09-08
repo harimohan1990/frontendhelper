@@ -16,6 +16,7 @@ import SystemDesign from './pages/systemdesign/SystemDesign';
 import Machinecode from './pages/machinecoding/Machinecode';
 import Footer from './components/common/footer/Footer';
 import TypeScriptPage from './pages/typescriptpage/TypeScriptPage';
+import GitPage from './pages/gitpage/GitPage';
 
 
 
@@ -33,13 +34,14 @@ function App() {
            <Route path="/TypeScriptInterview" element={<TypeScriptPage />} />
            <Route path='/ReactInterview' element={<Reactpage/>}/>
            <Route path="/NextInterview" element={< NextPage/>} />
-           <Route path="/DSA" element={< DsaPage/>} />
+           <Route path="/DSAInterview" element={< DsaPage/>} />
            <Route path="/SystemDesign" element={<SystemDesign />} />
            <Route path="/Machinecode" element={<Machinecode />} />
+           <Route path="/GitInterview" element={<GitPage />} />
           
          </Routes>
     </div>
-    <Footer/>
+    {/* <Footer/> */}
     </BrowserRouter>
   );
 }
